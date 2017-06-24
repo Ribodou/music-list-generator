@@ -1,4 +1,5 @@
 # music-list-generator
+THIS PROJECT IS'NT READY YET!
 
    Do you like when your favorite music is cut befor the end? Me neither.
 
