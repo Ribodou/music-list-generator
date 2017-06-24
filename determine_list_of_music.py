@@ -47,7 +47,7 @@ def determination_maxi(liste, but):
     """
     somme = liste[0]
     i = 0
-    while(somme<but):#on peut depasser
+    while(somme<but) and i<len(liste):
         i = i+1
         somme += liste[i]
     return(i+1)
@@ -62,7 +62,7 @@ def determination_mini(liste, but):
     taille = len(liste)
     somme = liste[taille-1]
     i = taille-1
-    while(somme<but):
+    while(somme<but)and i<len(liste):
         i = i-1
         somme += liste[i]
     return(taille - i)
@@ -103,11 +103,10 @@ def consultation():
     les_temps = []
     conn =sqlite3.connect("/home/lucas/Musique/musique.sq3")
     cur =conn.cursor()
-    cur.execute("SELECT chemin, temps FROM musique LIMIT 250")#
+    cur.execute("SELECT chemin, temps FROM musique LIMIT 250")
     rows = cur.fetchall()
     #rows: list of tuple like ('/home/user/path/music.extension','12.65')
     for row in rows:
-        print(row)
         les_temps.append(row[1])
         les_chemins.append(row[0])
     cur.close()
@@ -146,10 +145,8 @@ combinaison_temps = []
 combinaison_indices = []
 difference = []
 
-print(nb_element_min, nb_element_max)
 
-
-for nbelement in range(nb_element_min, nb_element_max+1): #]min,max[
+for nbelement in range(nb_element_min, nb_element_max+1):
 	combinaison_temps.append(list(combinations(time_list,nbelement)))
 	combinaison_indices.append(list(combinations(indices,nbelement)))
     
@@ -174,7 +171,6 @@ for longueur in combinaison_indices:
 
 
 indice_choix = []
-print(sorted(difference))
 
 indice_mini = difference.index(min(difference))
 indice_choix.append(indice_mini)
@@ -197,6 +193,5 @@ for element  in tuple_final:
 	commande += "\""
 
 
-#os.system(commande)
-print(commande,duree)
-#os.system(commande)
+#print(commande)
+os.system(commande)
