@@ -10,7 +10,7 @@ location : line 104 of determine_list_of music.py and lines 39 and 69 of databas
 \
 2)Run databese.py Check in a file called musique.sq3 is in your folder called "Musique".\
 \
-3)Run determine_list_of music.py. It shoud play music.
+3)Run AG_generator_of_list_of_music.py. It shoud play music.
 
 # dependences
    This program needs some dependences to works. To install them on debian (linux):\
@@ -19,4 +19,7 @@ sudo apt-get update\
 then\
 sudo apt-get install mediainfo mplayer\
 \
-You also have to be able to use import sqlite3 with python 3.
+You also have to be able to use "import sqlite3" with python 3:\
+sudo apt-get install sqlite3\
+\
+Feel free to report any problem.
