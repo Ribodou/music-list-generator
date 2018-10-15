@@ -27,7 +27,10 @@
 # ----- import des modules necessaire ----------------------------------
 import os.path 
 import sqlite3
+import sys
+args = sys.argv
 
+DEFAULT_DIRECTORY = "/home/lucas/Musique"
 # ----- definition des fonctions ---------------------------------------
 def creation(liste_comande):
     """
@@ -66,7 +69,10 @@ def listdirectory(path):
 
 # ----- corps du programme principal -----------------------------------
 # you should change this line if your name is different
-liste = listdirectory("/home/lucas/Musique")
+if (len(args) == 2):
+	liste = listdirectory(args[1])
+else:	
+	liste = listdirectory(DEFAULT_DIRECTORY)
 liste_comande = []
 
 for musique in liste:
